@@ -1,0 +1,46 @@
+
+.Red {
+  fill: #ff0000;
+  stroke: #000000;
+}
+
+#Red {
+  fill: #ff0000;
+  stroke: #000000;
+}
+
+.Red-centre {
+  fill: #ff0000;
+  stroke: #000000;
+  opacity: 0.3;
+}
+
+.Green {
+  fill: #00ff00;
+  stroke: #000000;
+}
+
+#Green {
+  fill: #00ff00;
+  stroke: #000000;
+}
+
+.Green-centre {
+  fill: #00ff00;
+  stroke: #000000;
+  opacity: 0.3;
+}
+
+.button {
+  fill:#bbccff;
+  stroke:#000000; }
+
+text {
+  font-family:Verdana; }
+
+
+.separation-line {
+  fill:none;
+  stroke: #0000ff;
+  opacity: 1;
+}
