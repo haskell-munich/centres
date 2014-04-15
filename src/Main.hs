@@ -33,11 +33,6 @@ centre ps@(p:_) = Just $ d (List.foldl' f zero ps) (length ps)
 
         f acc (Point a b _) = acc { x = x acc + a, y = y acc + b }
 
-
-separateBy :: (a -> Bool) -> [a] -> ([a], [a])
-separateBy p = foldr f ([], [])
-  where f x ~(as, bs) = if p x then (x:as, bs) else (as, x:bs)
-
 listHandler :: ServerPart Response
 listHandler = do
   cmd <- look "cmd"
@@ -49,7 +44,7 @@ listHandler = do
   let pts :: [Point]
       Just pts = decode (B.pack lst)
 
-      (rs, gs) = separateBy ((Red ==) . colour) pts
+      (rs, gs) = partition ((Red ==) . colour) pts
 
       centres = catMaybes [centre rs, centre gs]
 
